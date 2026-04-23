@@ -1,7 +1,7 @@
 from langgraph_supervisor import create_supervisor
 from agents import investigador, analista,redactor
 from langchain_openai import ChatOpenAI
-from schemas import ERPState
+from schemas.schemas import ERPState
 from langgraph.types import interrupt
 from tools.Tools import tool_obtener_modulos_disponibles
 

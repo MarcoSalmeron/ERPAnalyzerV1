@@ -66,13 +66,12 @@ async def ejecutar_agencia():
                 # Actualizar el estado del grafo con el módulo ERP
                 await oracle_graph.update_state(config, {"erp_module": respuesta})
 
-                # Reinyectar el mensaje humano
+                # Reinyectar respuesta del usuario
                 inputs = {"messages": [HumanMessage(content=respuesta)]}
                 continue
 
 
         except GraphInterrupt as gi:
-            # 👈 Capturamos la excepción directamente
             pregunta = gi.args[0].value
             print(f"\n🤖 Interrupción capturada: {pregunta}")
 

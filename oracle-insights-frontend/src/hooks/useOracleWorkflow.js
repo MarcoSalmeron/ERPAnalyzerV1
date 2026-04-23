@@ -20,7 +20,7 @@ export const useOracleWorkflow = () => {
   const wsRef = useRef(null);
   const threadIdRef = useRef(null);
 
-  // 👉 función única para reanudar
+  //  función para reanudar
   async function resumeAnalysis(respuesta) {
     if (!threadIdRef.current) return;
     await fetch(`/impact/resume/${threadIdRef.current}`, {
@@ -172,6 +172,6 @@ export const useOracleWorkflow = () => {
     error,
     startAnalysis,
     resetWorkflow,
-    resumeAnalysis, // 👉 expuesto para que ChatBox lo use
+    resumeAnalysis, // Reanudar Flujo
   };
 };

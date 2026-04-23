@@ -75,7 +75,7 @@ async def run_oracle_analysis(thread_id: str, query: str, oracle_app):
                     await manager.close_connection(thread_id)
                     break
 
-                # --- NUEVO BLOQUE: pausa si supervisor preguntó y aún no hay módulo ---
+                # --- Pausa si supervisor preguntó y aún no hay módulo ---
                 if state.next and "erp_module" not in state.values:
                     pregunta = state.values.get("messages", [])[-1].content
                     logger.info(f"🤖 Pregunta inicial del supervisor: {pregunta}")

@@ -15,6 +15,7 @@ function App() {
     error,
     startAnalysis,
     resetWorkflow,
+    resumeAnalysis, // <- Reanudar Flujo
   } = useOracleWorkflow();
 
   return (
@@ -47,6 +48,7 @@ function App() {
           <ChatBox 
             messages={messages}
             onStartAnalysis={startAnalysis}
+            resumeAnalysis={resumeAnalysis}  // ← Human in the Loop
             isAnalyzing={isAnalyzing}
           />
         </section>

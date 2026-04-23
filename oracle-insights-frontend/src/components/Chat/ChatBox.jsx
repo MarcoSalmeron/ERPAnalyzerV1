@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import MessageItem from './MessageItem';
 
 const ChatBox = ({ messages, onStartAnalysis, resumeAnalysis, isAnalyzing }) => {
+    console.log('resumeAnalysis prop:', resumeAnalysis);
   const [input, setInput] = useState('');
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);

@@ -1,2 +1,4 @@
 # state.py
-pending_responses = {}
+from typing import Dict
+
+pending_responses : Dict[str, str] = {}

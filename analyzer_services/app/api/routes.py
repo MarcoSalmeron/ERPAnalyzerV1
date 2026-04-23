@@ -6,7 +6,7 @@ from analyzer_services.app.process.ConnectionManager import manager
 import uuid
 import asyncio
 
-from schemas import ERPState
+from schemas.schemas import ERPState
 from analyzer_services.app.state import pending_responses
 
 router = APIRouter(prefix="/impact", tags=["Impact"])
@@ -16,7 +16,6 @@ async def resume_flow(thread_id: str, data: ERPState):
     # Guardamos la respuesta del usuario para que el bucle la recoja
     pending_responses[thread_id] = data.erp_module
     return {"status": "ok", "thread_id": thread_id}
-
 
 @router.post("/analyze")
 async def start_analysis(request: AnalysisRequest, http_request: Request):
